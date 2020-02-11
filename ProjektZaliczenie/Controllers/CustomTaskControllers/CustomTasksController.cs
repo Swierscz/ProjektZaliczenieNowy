@@ -26,7 +26,9 @@ namespace ProjektZaliczenie.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CustomTask>>> GetTasks()
         {
-            return await _context.Tasks.ToListAsync();
+            return Ok("Parabambam");
+            var x = await _context.Tasks.ToListAsync();
+            return Ok(x);
         }
 
         // GET: api/CustomTasks/5
@@ -78,16 +80,12 @@ namespace ProjektZaliczenie.Controllers
         public async Task<ActionResult<CustomTask>> PostCustomTask(CustomTask customTask)
         {
 
-            TaskValidationMessage validationMessage =
-                ValidatorProvider.GetCustomTaskValidators()
-                .Select(message => message.validate(customTask))
-                .FirstOrDefault(validationMessage => validationMessage.isValid == false);
+            TaskValidationMessage validationMessage = ValidatorProvider.GetValidationMessageIfInvalidInputProvided(customTask);
 
-            if (validationMessage != null) {
-                return StatusCode(422, validationMessage.message);
+            if (validationMessage != null)
+            {
+                return StatusCode(422, validationMessage.Message);
             }
-
-
 
             _context.Tasks.Add(customTask);
             await _context.SaveChangesAsync();

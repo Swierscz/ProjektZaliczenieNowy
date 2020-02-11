@@ -8,6 +8,6 @@ namespace ProjektZaliczenie.Controllers.CustomTaskControllers.InputValidators
 {
     public interface ICustomTaskInputValidator
     {
-        TaskValidationMessage validate(CustomTask customTask);
+        TaskValidationMessage Validate(CustomTask customTask);
     }
 }

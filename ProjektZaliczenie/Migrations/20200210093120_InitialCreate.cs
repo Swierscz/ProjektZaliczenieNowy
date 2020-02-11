@@ -15,7 +15,7 @@ namespace ProjektZaliczenie.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
                     CreationTime = table.Column<DateTime>(nullable: false),
-                    Finished = table.Column<DateTime>(nullable: false),
+                    FinishedTime = table.Column<DateTime>(nullable: false),
                     Description = table.Column<string>(maxLength: 20, nullable: false)
                 },
                 constraints: table =>

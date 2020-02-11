@@ -12,7 +12,7 @@ namespace ProjektZaliczenie.Models
         public string Name { get; set; }
         [Required]
         public DateTime CreationTime { get; set; }
-        public DateTime Finished { get; set; }
+        public DateTime FinishedTime { get; set; }
         [Required]
         [StringLength(20)]
         public string Description { get; set; }
@@ -20,7 +20,8 @@ namespace ProjektZaliczenie.Models
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            if (CreationTime > Finished) {
+            if (CreationTime > FinishedTime)
+            {
                 yield return new ValidationResult(
                     "CreationTime cannot be lower than FinishedTime"
                     );

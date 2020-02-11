@@ -34,7 +34,7 @@ namespace ProjektZaliczenie.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<DateTime>("Finished")
+                    b.Property<DateTime>("FinishedTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")

@@ -8,7 +8,7 @@ namespace ProjektZaliczenie.Controllers.CustomTaskControllers.InputValidators
 {
     public class ValidatorIsStartTimeInFuture : ICustomTaskInputValidator
     {
-        public TaskValidationMessage validate(CustomTask customTask)
+        public TaskValidationMessage Validate(CustomTask customTask)
         {
             if (customTask.CreationTime > DateTime.Now)
                 return new TaskValidationMessage(false, "Task creation time cannot be later than now");

@@ -7,17 +7,19 @@ namespace ProjektZaliczenie.Controllers.CustomTaskControllers.InputValidators
 {
     public class TaskValidationMessage
     {
-        public bool isValid { get; }
-        public string message { get; }
+        public bool IsValid { get; }
+        public string Message { get; }
 
-        public TaskValidationMessage(bool isValid) {
-            this.isValid = isValid;
-            this.message = "";
+        public TaskValidationMessage(bool isValid)
+        {
+            this.IsValid = isValid;
+            this.Message = "";
         }
 
-        public TaskValidationMessage(bool isValid, string message) {
-            this.isValid = isValid;
-            this.message = message;
+        public TaskValidationMessage(bool isValid, string message)
+        {
+            this.IsValid = isValid;
+            this.Message = message;
         }
     }
 }

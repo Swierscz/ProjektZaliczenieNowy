@@ -27,7 +27,7 @@ namespace ProjektZaliczenie
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CustomTaskContext>(opt => opt.UseSqlServer("Data Source=DESKTOP-SLGFSS7; Initial Catalog=testdb; Integrated Security=True"));
+            services.AddDbContext<CustomTaskContext>(opt => opt.UseSqlServer("Data Source=DESKTOP-SLGFSS7; Initial Catalog=mydb; Integrated Security=True"));
             services.AddControllers();
         }
 

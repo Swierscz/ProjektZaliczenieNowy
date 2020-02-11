@@ -10,7 +10,7 @@ using ProjektZaliczenie.Database;
 namespace ProjektZaliczenie.Migrations
 {
     [DbContext(typeof(CustomTaskContext))]
-    [Migration("20200205121525_InitialCreate")]
+    [Migration("20200210093120_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,7 +36,7 @@ namespace ProjektZaliczenie.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<DateTime>("Finished")
+                    b.Property<DateTime>("FinishedTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")

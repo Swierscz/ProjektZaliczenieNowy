@@ -8,7 +8,7 @@ namespace ProjektZaliczenie.Controllers.CustomTaskControllers.InputValidators
 {
     public class ValidatorIsNameNull : ICustomTaskInputValidator
     {
-        public TaskValidationMessage validate(CustomTask customTask)
+        public TaskValidationMessage Validate(CustomTask customTask)
         {
             if (customTask.Name == null)
                 return new TaskValidationMessage(false, "Task name cannot be null");
